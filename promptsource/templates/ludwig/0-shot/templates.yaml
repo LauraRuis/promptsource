@@ -1,0 +1,16 @@
+dataset: ludwig
+subset: 0-shot
+templates:
+  1: !Template
+    answer_choices: yes ||| no
+    id: 1
+    jinja: "Does the following response to the question imply yes or no?\n\nquestion: {{utterance}}\nresponse: {{response}}\nimplicature: ||| {{implicature}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Ranking
+      original_task: true
+    name: zero_shot_template_1
+    reference: ''
