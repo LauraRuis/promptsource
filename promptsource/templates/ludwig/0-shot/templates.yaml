@@ -1,9 +1,9 @@
 dataset: ludwig
 subset: 0-shot
 templates:
-  1: !Template
+  10a6ab6c-51f1-45cf-9176-54764bb6b612: !Template
     answer_choices: yes ||| no
-    id: 1
+    id: 10a6ab6c-51f1-45cf-9176-54764bb6b612
     jinja: "Does the following response to the question imply yes or no?\n\nquestion: {{utterance}}\nresponse: {{response}}\nimplicature: ||| {{implicature}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -12,5 +12,5 @@ templates:
       metrics:
       - Ranking
       original_task: true
-    name: zero_shot_template_1
+    name: template_1
     reference: ''
