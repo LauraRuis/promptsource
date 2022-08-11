@@ -1,0 +1,81 @@
+dataset: UCL-DARK/ludwig
+subset: 1-shot
+templates:
+  01: !Template
+    answer_choices: yes ||| no
+    id: 01
+    jinja: "Each following response to the question implies yes or no:\n\n{% for i in range(10) %}question: {{prompts['utterance'][i]}}\nresponse: {{prompts['response'][i]}}\nimplicature: {{prompts['implicature'][i]}}\n\n{% endfor %}Does the following response to the question imply yes or no?\n\nquestion: {{utterance}}\nresponse: {{response}}\nimplicature: ||| {{implicature}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Ranking
+      original_task: true
+    name: template_1
+    reference: ''
+  02: !Template
+    answer_choices: yes ||| no
+    id: 02
+    jinja: "The following are examples of the task:\n\n{% for i in range(10) %}Esther asked \"{{prompts['utterance'][i]}}\" and Juan responded \"{{prompts['response'][i]}}\", which means {{prompts['implicature'][i]}}\n\n{% endfor %}Finish the following text:\n\nEsther asked \"{{utterance}}\" and Juan responded \"{{response}}\", which means ||| {{implicature}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+        - en
+      metrics:
+        - Ranking
+      original_task: true
+    name: template_2
+    reference: ''
+  03: !Template
+    answer_choices: yes ||| no
+    id: 03
+    jinja: "Is the implied meaning of the following responses yes or no:\n\n{% for i in range(10) %}question: {{prompts['utterance'][i]}}\nresponse: {{prompts['response'][i]}}\nmeaning: {{prompts['implicature'][i]}}\n\n{% endfor %}Is the implied meaning of the following response yes or no:\n\nquestion: {{utterance}}\nresponse: {{response}}\nmeaning: ||| {{implicature}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+        - en
+      metrics:
+        - Ranking
+      original_task: true
+    name: template_3
+    reference: ''
+  04: !Template
+    answer_choices: yes ||| no
+    id: 04
+    jinja: "What is the intent of the following response, yes or no?\n\n{% for i in range(10) %}question: {{prompts['utterance'][i]}}\nresponse: {{prompts['response'][i]}}\nintent: {{prompts['implicature'][i]}}\n\n{% endfor %}What is the intent of the following response, yes or no?\n\nquestion: {{utterance}}\nresponse: {{response}}\nintent: ||| {{implicature}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+        - en
+      metrics:
+        - Ranking
+      original_task: true
+    name: template_4
+    reference: ''
+  05: !Template
+    answer_choices: yes ||| no
+    id: 05
+    jinja: "The following are examples of the task:\n\n{% for i in range(10) %}Karen asked \"{{prompts['utterance'][i]}}\" and William responded \"{{prompts['response'][i]}}\", which means {{prompts['implicature'][i]}}\n\n{% endfor %}Finish the following text:\n\nKaren asked \"{{utterance}}\" and William responded \"{{response}}\", which means ||| {{implicature}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+        - en
+      metrics:
+        - Ranking
+      original_task: true
+    name: template_5
+    reference: ''
+  06: !Template
+    answer_choices: yes ||| no
+    id: 06
+    jinja: "The following are examples of the task:\n\n{% for i in range(10) %}Bob asked \"{{prompts['utterance'][i]}}\" and Alice responded \"{{prompts['response'][i]}}\", which means {{prompts['implicature'][i]}}\n\n{% endfor %}Finish the following text:\n\nBob asked \"{{utterance}}\" and Alice responded \"{{response}}\", which means ||| {{implicature}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+        - en
+      metrics:
+        - Ranking
+      original_task: true
+    name: template_6
+    reference: ''

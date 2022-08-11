@@ -1,9 +1,9 @@
-dataset: ludwig
+dataset: UCL-DARK/ludwig
 subset: 0-shot
 templates:
-  10a6ab6c-51f1-45cf-9176-54764bb6b612: !Template
+  01: !Template
     answer_choices: yes ||| no
-    id: 10a6ab6c-51f1-45cf-9176-54764bb6b612
+    id: 01
     jinja: "Does the following response to the question imply yes or no?\n\nquestion: {{utterance}}\nresponse: {{response}}\nimplicature: ||| {{implicature}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -13,4 +13,69 @@ templates:
       - Ranking
       original_task: true
     name: template_1
+    reference: ''
+  02: !Template
+    answer_choices: yes ||| no
+    id: 02
+    jinja: "Finish the following text:\n\nEsther asked \"{{utterance}}\" and Juan responded \"{{response}}\", which means ||| {{implicature}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+        - en
+      metrics:
+        - Ranking
+      original_task: true
+    name: template_2
+    reference: ''
+  03: !Template
+    answer_choices: yes ||| no
+    id: 03
+    jinja: "Is the implied meaning of the following response yes or no:\n\nquestion: {{utterance}}\nresponse: {{response}}\nmeaning: ||| {{implicature}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+        - en
+      metrics:
+        - Ranking
+      original_task: true
+    name: template_3
+    reference: ''
+  04: !Template
+    answer_choices: yes ||| no
+    id: 04
+    jinja: "What is the intent of the following response, yes or no?\n\nquestion: {{utterance}}\nresponse: {{response}}\nintent: ||| {{implicature}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+        - en
+      metrics:
+        - Ranking
+      original_task: true
+    name: template_4
+    reference: ''
+  05: !Template
+    answer_choices: yes ||| no
+    id: 05
+    jinja: "Finish the following text:\n\nKaren asked \"{{utterance}}\" and William responded \"{{response}}\", which means ||| {{implicature}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+        - en
+      metrics:
+        - Ranking
+      original_task: true
+    name: template_5
+    reference: ''
+  06: !Template
+    answer_choices: yes ||| no
+    id: 06
+    jinja: "Finish the following text:\n\nBob asked \"{{utterance}}\" and Alice responded \"{{response}}\", which means ||| {{implicature}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+        - en
+      metrics:
+        - Ranking
+      original_task: true
+    name: template_6
     reference: ''
